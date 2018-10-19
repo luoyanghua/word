@@ -1,0 +1,5 @@
+INSERT INTO Common.DataDicInfo(LookUpKey,DicCode,DicName,DicComment,DicExtend) VALUES ( 'InstitutionOpen', 'OPDiagnosis', 'ÑÛµ×Õï¶Ï', 'ÑÛµ×Õï¶Ï', '1')
+
+
+
+INSERT INTO Common.DataDicInfo(LookUpKey,DicCode,DicName,DicComment,DicExtend) VALUES ( 'ExamineType', 'OP', 'OP', 'ÑÛµ×', '1')

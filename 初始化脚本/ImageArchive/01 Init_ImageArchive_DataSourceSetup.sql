@@ -1,0 +1,17 @@
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('RIS', '放射科', 'CT');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('RIS', '放射科', 'CR');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('ECT', '核医学科', 'NM');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('RIS', '放射科', 'DX');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('RIS', '放射科', 'DR');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('ECG', '心电科', 'ECG');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('EIS', '内镜科', 'ES');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('RIS', '放射科', 'MR');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('RIS', '放射科', 'MG');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('PIS', '病理科', 'PS');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('Other', '其他科室', 'SC');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('RIS', '放射科', 'RF');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('UIS', '超声科', 'US');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('Other', '其他科室', 'OT');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('RIS', '放射科', 'XA');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('XIS', '特检科', 'EBS');
+INSERT INTO DataSourceSetup (DataSource, DataSourceName, ExamineType) VALUES ('XIS', '特检科', 'GSVL');

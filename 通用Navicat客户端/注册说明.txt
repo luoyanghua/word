@@ -1,0 +1,17 @@
+
+注册说明：安装好软件，关闭杀软，右键以管理员运行(PatchNavicat.exe)，弹窗提示完成注册即可！
+
+如有提示找不到安装路径的请手动选择到安装目录下的navicat.exe;
+例如：
+	64位系统下如下：
+		C:\Program Files\PremiumSoft\Navicat Premium\navicat.exe
+
+	32位系统下如下：
+		C:\Program Files (x86)\PremiumSoft\Navicat Premium\navicat.exe
+
+		
+		
+		
+		
+		
+		
