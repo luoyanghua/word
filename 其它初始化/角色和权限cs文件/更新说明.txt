@@ -1,0 +1,7 @@
+eWorld.Services/SecurityStandardPermissionProvider.cs  
+
+eWorld.WCFBLL/Common/Install/CodeFirstInstallationService.cs
+
+eWorld.WCFBLL/Common/NopCommerce/Security/StandardPermissionProvider.cs
+
+请复制内容 直接黏贴命名空间会变。

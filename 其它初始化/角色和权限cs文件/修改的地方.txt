@@ -1,0 +1,5 @@
+CodeFirstInstallationService.InstallCustomersAndUsers()方法 添加用户角色
+
+StandardPermissionProvider.GetDefaultPermissions方法()   角色默认的权限模块管理
+
+Domain\CRM\SystemCustomerRoleNames
