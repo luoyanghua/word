@@ -1,0 +1,60 @@
+-- Create table
+create table OIS_DIC_PRE_CATEGORY
+(
+  id              NUMBER(4) not null,
+  name            VARCHAR2(32) not null,
+  short_name      VARCHAR2(4),
+  title           VARCHAR2(64),
+  hint            NUMBER(2) default 0,
+  pres_type       VARCHAR2(25) not null,
+  assos_reg_dept  VARCHAR2(256),
+  assos_nature    VARCHAR2(256),
+  is_default      NUMBER(1) default 0 not null,
+  state           NUMBER(1) default 1 not null,
+  branch_code     VARCHAR2(10) not null,
+  med_limit       VARCHAR2(50),
+  type            NUMBER(2) default 1 not null,
+  code            VARCHAR2(6),
+  tag             VARCHAR2(2),
+  independent_seq VARCHAR2(100),
+  sign_grade      VARCHAR2(6)
+);
+-- Add comments to the table 
+comment on table OIS_DIC_PRE_CATEGORY
+  is '处方分类';
+-- Add comments to the columns 
+comment on column OIS_DIC_PRE_CATEGORY.id
+  is '序号';
+comment on column OIS_DIC_PRE_CATEGORY.name
+  is '名称';
+comment on column OIS_DIC_PRE_CATEGORY.short_name
+  is '简称';
+comment on column OIS_DIC_PRE_CATEGORY.title
+  is '处方标头';
+comment on column OIS_DIC_PRE_CATEGORY.hint
+  is '提示';
+comment on column OIS_DIC_PRE_CATEGORY.pres_type
+  is '处方类型,可多个,用'',''';
+comment on column OIS_DIC_PRE_CATEGORY.assos_reg_dept
+  is '关联挂号科室';
+comment on column OIS_DIC_PRE_CATEGORY.assos_nature
+  is '病人性质,允许多个,用'',''分割,取值ACC_DIC_FEE_NATURE.ID';
+comment on column OIS_DIC_PRE_CATEGORY.is_default
+  is '是否默认处方(0-否，1-是)';
+comment on column OIS_DIC_PRE_CATEGORY.state
+  is '状态，0=停用，1=在用，2=删除';
+comment on column OIS_DIC_PRE_CATEGORY.branch_code
+  is '机构代码';
+comment on column OIS_DIC_PRE_CATEGORY.med_limit
+  is '药品限制';
+comment on column OIS_DIC_PRE_CATEGORY.type
+  is '类型：1：普通 2：外配 3：外送  4：三方代煎';
+comment on column OIS_DIC_PRE_CATEGORY.code
+  is '代码，对应老表xh';
+comment on column OIS_DIC_PRE_CATEGORY.tag
+  is '值可为空。值一般有J、J1、MZ等。对应于老系统的CFFL中BZ字段';
+comment on column OIS_DIC_PRE_CATEGORY.sign_grade
+  is '该处方分类对应的特殊药品';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table OIS_DIC_PRE_CATEGORY
+  add constraint OIS_DIC_PRE_CATEGORY_U01 primary key (ID);

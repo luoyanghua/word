@@ -1,0 +1,62 @@
+-- Create table
+create table CIS_DIC_EXEC_WAY
+(
+  id           NUMBER(8) not null,
+  branch_code  VARCHAR2(10) not null,
+  code         VARCHAR2(8) not null,
+  way_id_c     NUMBER(8),
+  name         VARCHAR2(32) not null,
+  short_name   VARCHAR2(16),
+  wm_used      NUMBER(1) default 0 not null,
+  cpm_used     NUMBER(1) default 0 not null,
+  cm_used      NUMBER(1) default 0 not null,
+  other_used   NUMBER(1) default 0 not null,
+  type_id      NUMBER(2) not null,
+  ord          VARCHAR2(8),
+  state        NUMBER(1) default 1 not null,
+  create_empid NUMBER(9),
+  create_time  DATE,
+  modify_empid NUMBER(9),
+  modify_time  DATE
+);
+-- Add comments to the table 
+comment on table CIS_DIC_EXEC_WAY
+  is '医嘱执行途径';
+-- Add comments to the columns 
+comment on column CIS_DIC_EXEC_WAY.id
+  is 'ID 3+5';
+comment on column CIS_DIC_EXEC_WAY.branch_code
+  is '医疗分支机构代码';
+comment on column CIS_DIC_EXEC_WAY.code
+  is '途径代码';
+comment on column CIS_DIC_EXEC_WAY.way_id_c
+  is '途径标准 CIS_DIC_EXEC_WAY_C.ID';
+comment on column CIS_DIC_EXEC_WAY.name
+  is '途径名称';
+comment on column CIS_DIC_EXEC_WAY.short_name
+  is '简称';
+comment on column CIS_DIC_EXEC_WAY.wm_used
+  is '西药使用(0=否,1=是)';
+comment on column CIS_DIC_EXEC_WAY.cpm_used
+  is '成药使用(0=否,1=是)';
+comment on column CIS_DIC_EXEC_WAY.cm_used
+  is '中药使用(0=否,1=是)';
+comment on column CIS_DIC_EXEC_WAY.other_used
+  is '其它使用(0=否,1=是)';
+comment on column CIS_DIC_EXEC_WAY.type_id
+  is '途径类型';
+comment on column CIS_DIC_EXEC_WAY.ord
+  is '排序码';
+comment on column CIS_DIC_EXEC_WAY.state
+  is '记录状态(0=停用,1=在用,2=删除)';
+comment on column CIS_DIC_EXEC_WAY.create_empid
+  is '创建人员';
+comment on column CIS_DIC_EXEC_WAY.create_time
+  is '创建时间';
+comment on column CIS_DIC_EXEC_WAY.modify_empid
+  is '修改人员';
+comment on column CIS_DIC_EXEC_WAY.modify_time
+  is '修改时间';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table CIS_DIC_EXEC_WAY
+  add constraint PK_CIS_DIC_EXEC_WAY primary key (ID);

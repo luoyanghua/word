@@ -6,14 +6,14 @@
 	<Local Expanded="Yes" Name="eWorldMed">
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Authorize" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Authorize/Authorize.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Open" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Open/Open.pdm"/>
-		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Name="PDM_Clinic" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Clinic/Clinic.pdm"/>
+		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Name="PDM_Clinic" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Clinic/Clinic.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Cloud" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Cloud/Cloud.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Name="PDM_Common" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Common/Common.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Consult" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Consult/Consult.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Name="PDM_CRM" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="CRM/CRM.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_CustomerService" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="CustomerService/CustomerService.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_DataMining" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="DataMining/DataMining.pdm"/>
-		<Model ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Diagnosis" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Diagnosis/Diagnosis.pdm"/>
+		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Name="PDM_Diagnosis" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Diagnosis/Diagnosis.pdm"/>
 		<Model ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_FollowUp" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="FollowUp/FollowUp.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_ICU" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="ICU/ICU.pdm"/>
 		<Model ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_ImageArchive" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="ImageArchive/ImageArchive.pdm"/>
@@ -23,12 +23,12 @@
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_MDT" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="MDT/MDT.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Pathology" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Pathology/Pathology.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Payment" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Payment/Payment.pdm"/>
-		<Model ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Name="PDM_PublicHealth" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="PublicHealth/PublicHealth.pdm"/>
+		<Model ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_PublicHealth" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="PublicHealth/PublicHealth.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Quality" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Quality/Quality.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Referral" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Referral/Referral.pdm"/>
 		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Reserve" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Reserve/Reserve.pdm"/>
-		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Resource" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Resource/Resource.pdm"/>
-		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Loaded="No" Name="PDM_Teach" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Teach/Teach.pdm"/>
+		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Name="PDM_Resource" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Resource/Resource.pdm"/>
+		<Model Expanded="Yes" ID="{747C5C62-683E-4597-A9F3-30383EB4AB06}" Name="PDM_Teach" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Teach/Teach.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>

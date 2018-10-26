@@ -726,8 +726,13 @@ INSERT INTO SmsTemplatePara (TemplateCode, ParaCode, ParaName, SortNo, TemplateI
 
 --  ****************************  双向转诊 的短信模板 以上 **************************************
 
-
-
+-- 20181016
+-- 运营
+INSERT INTO SmsTemplate (TemplateCode, TemplaeName, Content, ThirdTemplateId, ServiceCenterId, InstitutionGuid, Kind) VALUES ('ServiceExpirationReminder', '服务时间到期提醒', '尊敬的{InstitutionlName}管理员，您在{CloudSystemName}上的{TypeName}将于{EndDate}过期，请及时处理。', NULL, NULL, NULL, NULL);
+INSERT INTO SmsTemplatePara (TemplateCode, ParaCode, ParaName, SortNo, TemplateId )  SELECT  'ServiceExpirationReminder', N'InstitutionlName', N'医院名称', 1, MAX(ID) FROM SmsTemplate;
+INSERT INTO SmsTemplatePara (TemplateCode, ParaCode, ParaName, SortNo, TemplateId )  SELECT  'ServiceExpirationReminder', N'CloudSystemName', N'影像云名称', 2, MAX(ID) FROM SmsTemplate;
+INSERT INTO SmsTemplatePara (TemplateCode, ParaCode, ParaName, SortNo, TemplateId )  SELECT  'ServiceExpirationReminder', N'TypeName', N'服务名称', 3, MAX(ID) FROM SmsTemplate;
+INSERT INTO SmsTemplatePara (TemplateCode, ParaCode, ParaName, SortNo, TemplateId )  SELECT  'ServiceExpirationReminder', N'EndDate', N'到期时间', 4, MAX(ID) FROM SmsTemplate;
 
 
 

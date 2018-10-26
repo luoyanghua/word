@@ -4,3 +4,7 @@ Express（线下快递信息表）增加字段：BackName nvarchar(50)、BackPhone nvarchar(20)
 ===2018-10-11===
 Express（线下快递信息表）增加字段：State smallint、OtherThing nvarchar(30)
 
+===2018-10-19===
+ApplyConsult（病理会诊申请表）增加字段：ExamineOrgan nvarchar(30)
+Meeting（邀请沟通表）增加字段：IsSettle bit
+

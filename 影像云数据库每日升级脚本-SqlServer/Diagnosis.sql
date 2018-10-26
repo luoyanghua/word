@@ -820,11 +820,72 @@ create table OverTimeLog (
 go
 
 
+/*==============================================================*/
+/* 2018-10-09
+
+ImageRequest£®”∞œÒ’Ô∂œ…Í«Î±Ì£©–ﬁ∏ƒ◊÷∂Œ£∫ClinicDiagnose nvarchar(512)°¢PatientDesc nvarchar(1024)°¢MedicalRecord nvarchar(MAX)
+EcgRequest£®–ƒµÁ’Ô∂œ…Í«Î±Ì£©–ﬁ∏ƒ◊÷∂Œ£∫ClinicDiagnose nvarchar(512)°¢PatientDesc nvarchar(1024)°¢MedicalRecord nvarchar(MAX)
+FundusRequest£®—€µ◊’Ô∂œ…Í«Î±Ì£©–ﬁ∏ƒ◊÷∂Œ£∫ClinicDiagnose nvarchar(512)°¢PatientDesc nvarchar(1024)°¢MedicalRecord nvarchar(MAX)
+                                              
+*/
+/*==============================================================*/
+---- ¡Ÿ¥≤’Ô∂œ£®”∞œÒ’Ô∂œ…Í«Î±Ì£©
+
+
+if exists(select * from syscolumns where id = object_id('ImageRequest') and name = 'ClinicDiagnose') 
+alter table ImageRequest alter column ClinicDiagnose nvarchar (512)
+go
 
 
 
+----ªº’ﬂ÷˜Àﬂ£®”∞œÒ’Ô∂œ…Í«Î±Ì£©
+if exists(select * from syscolumns where id = object_id('ImageRequest') and name = 'PatientDesc') 
+alter table ImageRequest alter column PatientDesc nvarchar (1024)
+go
 
 
+----- ªº’ﬂ≤° ∑£®”∞œÒ’Ô∂œ…Í«Î±Ì£©
+
+if exists(select * from syscolumns where id = object_id('ImageRequest') and name = 'MedicalRecord') 
+alter table ImageRequest alter column MedicalRecord nvarchar(max)
+go
 
 
+-----¡Ÿ¥≤’Ô∂œ£®–ƒµÁ’Ô∂œ…Í«Î±Ì£©
 
+
+if exists(select * from syscolumns where id = object_id('EcgRequest') and name = 'ClinicDiagnose') 
+alter table EcgRequest alter column ClinicDiagnose nvarchar (512)
+go
+
+
+----- ªº’ﬂ÷˜Àﬂ£®–ƒµÁ’Ô∂œ…Í«Î±Ì£©
+
+
+if exists(select * from syscolumns where id = object_id('EcgRequest') and name = 'PatientDesc') 
+alter table EcgRequest alter column PatientDesc nvarchar (1024)
+go
+
+
+-------- ªº’ﬂ≤° ∑£®–ƒµÁ’Ô∂œ…Í«Î±Ì£©
+
+if exists(select * from syscolumns where id = object_id('EcgRequest') and name = 'MedicalRecord') 
+alter table EcgRequest alter column MedicalRecord nvarchar(max)
+go
+
+---------¡Ÿ¥≤’Ô∂œ£®—€µ◊’Ô∂œ…Í«Î±Ì£©
+if exists(select * from syscolumns where id = object_id('FundusRequest') and name = 'ClinicDiagnose') 
+alter table EcgRequest alter column ClinicDiagnose nvarchar(512)
+go
+
+
+----- ªº’ﬂ÷˜Àﬂ£®—€µ◊’Ô∂œ…Í«Î±Ì£©
+if exists(select * from syscolumns where id = object_id('FundusRequest') and name = 'PatientDesc') 
+alter table EcgRequest alter column PatientDesc nvarchar(1024)
+go
+
+
+------ ªº’ﬂ≤° ∑£®—€µ◊’Ô∂œ…Í«Î±Ì£©
+if exists(select * from syscolumns where id = object_id('FundusRequest') and name = 'MedicalRecord') 
+alter table EcgRequest alter column MedicalRecord nvarchar(max)
+go

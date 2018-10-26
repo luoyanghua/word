@@ -1,0 +1,171 @@
+-- Create table
+create table MMIS_DIC_MED
+(
+  id                 NUMBER(9) not null,
+  branch_code        VARCHAR2(12) not null,
+  code               VARCHAR2(12) not null,
+  med_id_c           NUMBER(9),
+  gname_id           NUMBER(9),
+  name               VARCHAR2(128) not null,
+  ename              VARCHAR2(64),
+  phar_id            NUMBER(4),
+  form_id            NUMBER(7) not null,
+  spec               VARCHAR2(64) not null,
+  type               VARCHAR2(2) not null,
+  med_type_id        NUMBER(6) not null,
+  factory_id         NUMBER(8),
+  origin             VARCHAR2(32),
+  factory_class      NUMBER(1),
+  efid               VARCHAR2(32),
+  min_pack_unit      VARCHAR2(8) not null,
+  retail_price       NUMBER(12,4) not null,
+  reta_price_unit    VARCHAR2(8) not null,
+  reta_ratio         NUMBER(4) not null,
+  trade_price        NUMBER(12,4) default 0,
+  bid_price          NUMBER(12,4),
+  top_price          NUMBER(12,4),
+  national_price     NUMBER(12,4),
+  pur_price          NUMBER(12,4) default 0,
+  price_level        NUMBER(1),
+  pur_unit           VARCHAR2(8) not null,
+  pur_ratio          NUMBER(4) not null,
+  stor_temp_id       NUMBER(9),
+  stor_humidity      VARCHAR2(32),
+  is_shading         NUMBER(1) not null,
+  is_self_produc     NUMBER(1) not null,
+  can_byo            NUMBER(1) not null,
+  is_pivas           NUMBER(1) not null,
+  can_osp            NUMBER(1) default 0,
+  is_reject_return   NUMBER(1),
+  reject_ret_msg     VARCHAR2(32),
+  spec_msg           VARCHAR2(128),
+  out_used           NUMBER(1) not null,
+  in_used            NUMBER(1) not null,
+  other_used         NUMBER(1) not null,
+  remark             VARCHAR2(256),
+  state              NUMBER(1) default 1 not null,
+  create_empid       NUMBER(9) not null,
+  create_time        DATE not null,
+  modify_empid       NUMBER(9) not null,
+  modify_time        DATE not null,
+  pur_cust_id        NUMBER(8),
+  next_seq           NUMBER(6),
+  biz_permit         VARCHAR2(60),
+  reta_price_rule_id NUMBER(6) not null,
+  state_sn           NUMBER(15)
+);
+-- Add comments to the table 
+comment on table MMIS_DIC_MED
+  is '药品商品名字典';
+-- Add comments to the columns 
+comment on column MMIS_DIC_MED.id
+  is '机构号3+6位流水';
+comment on column MMIS_DIC_MED.branch_code
+  is '机构号';
+comment on column MMIS_DIC_MED.code
+  is '代码';
+comment on column MMIS_DIC_MED.med_id_c
+  is '商品名标准ID 云端ID';
+comment on column MMIS_DIC_MED.gname_id
+  is '通用名ID';
+comment on column MMIS_DIC_MED.name
+  is '商品名称';
+comment on column MMIS_DIC_MED.ename
+  is '英文名';
+comment on column MMIS_DIC_MED.phar_id
+  is '药理ID';
+comment on column MMIS_DIC_MED.form_id
+  is '剂型ID(机构ID 3位+4位流水号)';
+comment on column MMIS_DIC_MED.spec
+  is '规格';
+comment on column MMIS_DIC_MED.type
+  is '自然药品类型（Y：西药，Z：成药，C：草药，A：试剂，R：原材料，M：材料类，O：其他）';
+comment on column MMIS_DIC_MED.med_type_id
+  is '药品管理类型ID';
+comment on column MMIS_DIC_MED.factory_id
+  is '生产厂家ID';
+comment on column MMIS_DIC_MED.origin
+  is '原产地';
+comment on column MMIS_DIC_MED.factory_class
+  is '产地分类（1：国产，2：合资，3：进口）';
+comment on column MMIS_DIC_MED.efid
+  is '商品电子码';
+comment on column MMIS_DIC_MED.min_pack_unit
+  is '最小包装单位';
+comment on column MMIS_DIC_MED.retail_price
+  is '零售价';
+comment on column MMIS_DIC_MED.reta_price_unit
+  is '零售价单位';
+comment on column MMIS_DIC_MED.reta_ratio
+  is '与最小包装单位换算比';
+comment on column MMIS_DIC_MED.trade_price
+  is '批发价';
+comment on column MMIS_DIC_MED.bid_price
+  is '招标价';
+comment on column MMIS_DIC_MED.top_price
+  is '最高价';
+comment on column MMIS_DIC_MED.national_price
+  is '国家零售价';
+comment on column MMIS_DIC_MED.pur_price
+  is '计划进价';
+comment on column MMIS_DIC_MED.price_level
+  is '价格类别（1：低价，2：普通，3：高价）';
+comment on column MMIS_DIC_MED.pur_unit
+  is '采购单位';
+comment on column MMIS_DIC_MED.pur_ratio
+  is '采购与最小包装数量转换比';
+comment on column MMIS_DIC_MED.stor_temp_id
+  is '储藏温度ID TYPE=''WD.H02.00.001''';
+comment on column MMIS_DIC_MED.stor_humidity
+  is '储藏湿度';
+comment on column MMIS_DIC_MED.is_shading
+  is '是否遮光（0：否，1：是）';
+comment on column MMIS_DIC_MED.is_self_produc
+  is '是否自制药品（0：否，1：是）';
+comment on column MMIS_DIC_MED.can_byo
+  is '是否自备药品（0:非自备药品 ，1:默认病人自备 ，2:默认护士自备，默认为0）';
+comment on column MMIS_DIC_MED.is_pivas
+  is '是否静配中心发药（0：否，1：是）';
+comment on column MMIS_DIC_MED.can_osp
+  is '是否纳入外配药品（0：不纳入，1： 纳入门诊，2：纳入住院，3：全院纳入 , 4：外送至病人，5：外送至医院使用）  1-3不考虑库存，4-5考虑库存
+';
+comment on column MMIS_DIC_MED.is_reject_return
+  is '禁止门诊退药';
+comment on column MMIS_DIC_MED.reject_ret_msg
+  is '禁止门诊退药的提示';
+comment on column MMIS_DIC_MED.spec_msg
+  is '特殊药品提示';
+comment on column MMIS_DIC_MED.out_used
+  is '门诊使用(0=否,1=是)';
+comment on column MMIS_DIC_MED.in_used
+  is '住院使用(0=否,1=是)';
+comment on column MMIS_DIC_MED.other_used
+  is '其它使用(0=否,1=是)';
+comment on column MMIS_DIC_MED.remark
+  is '备注';
+comment on column MMIS_DIC_MED.state
+  is '记录状态（0：停用，1：在用，2：删除）';
+comment on column MMIS_DIC_MED.create_empid
+  is '创建人员';
+comment on column MMIS_DIC_MED.create_time
+  is '创建时间';
+comment on column MMIS_DIC_MED.modify_empid
+  is '修改人员';
+comment on column MMIS_DIC_MED.modify_time
+  is '修改时间';
+comment on column MMIS_DIC_MED.pur_cust_id
+  is '默认采购供应商';
+comment on column MMIS_DIC_MED.next_seq
+  is '下一批次号';
+comment on column MMIS_DIC_MED.biz_permit
+  is '业务应用许可（逗号分隔，来源业务应用字典）';
+comment on column MMIS_DIC_MED.reta_price_rule_id
+  is '零售定价策略ID MMIS_DIC_MED_PRICE_RULE.ID';
+comment on column MMIS_DIC_MED.state_sn
+  is '状态流水 MMIS_DIC_MED_STATE.STATE_SN';
+-- Create/Recreate indexes 
+create index IDX_MED_ID_C on MMIS_DIC_MED (MED_ID_C);
+create index IDX_MMIS_DIC_MED_BRANCHCODE on MMIS_DIC_MED (BRANCH_CODE);
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MMIS_DIC_MED
+  add constraint PK_MMIS_DIC_MED primary key (ID);

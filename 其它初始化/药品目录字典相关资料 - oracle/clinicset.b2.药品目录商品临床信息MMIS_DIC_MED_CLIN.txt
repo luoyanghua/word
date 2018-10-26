@@ -1,0 +1,149 @@
+-- Create table
+create table MMIS_DIC_MED_CLIN
+(
+  med_id            NUMBER(9) not null,
+  dose_unit         VARCHAR2(8) not null,
+  dose_ratio        NUMBER(10,4) default 1 not null,
+  clin_dosage_unit  VARCHAR2(8) not null,
+  clin_dosage_ratio NUMBER(4) default 1 not null,
+  pres_unit         VARCHAR2(8) not null,
+  pres_ratio        NUMBER(4) default 1 not null,
+  ord_unit          VARCHAR2(8) not null,
+  ord_ratio         NUMBER(4) default 1 not null,
+  out_dose_format   NUMBER(1) not null,
+  in_dose_format    NUMBER(1) not null,
+  disp_comp         NUMBER(1) default 1 not null,
+  chn_med_base      NUMBER(5,2),
+  manage_type       VARCHAR2(1),
+  is_fat_soluble    NUMBER(1) default 0 not null,
+  is_instil         NUMBER(1) default 0 not null,
+  rang_upper        VARCHAR2(16),
+  rang_lower        VARCHAR2(16),
+  can_double_sign   NUMBER(1) default 0 not null,
+  is_skin_test      NUMBER(1) default 0 not null,
+  st_charge_mode    NUMBER(1),
+  antib_grade       NUMBER(1) default 0 not null,
+  ddd               NUMBER(4),
+  antiv_grade       NUMBER(1) default 0 not null,
+  spec_med_class    VARCHAR2(1),
+  spec_med_grade    NUMBER(1),
+  insure_class      VARCHAR2(12),
+  otc               NUMBER(1) default 0 not null,
+  preg_risk_grade   VARCHAR2(1),
+  eml_class_id      NUMBER(2),
+  high_alert_grade  VARCHAR2(1),
+  can_confusion     NUMBER(1) default 0 not null,
+  can_fall          NUMBER(1) default 0 not null,
+  is_harm           NUMBER(1) default 0 not null,
+  is_chronic        NUMBER(1) default 0 not null,
+  is_contrast       NUMBER(1) default 0 not null,
+  is_hormone        NUMBER(1) default 0 not null,
+  is_anti_rejection NUMBER(1) default 0 not null,
+  is_chemotherapy   NUMBER(1) default 0 not null,
+  create_empid      NUMBER(9) not null,
+  create_time       DATE not null,
+  modify_empid      NUMBER(9) not null,
+  modify_time       DATE not null,
+  state_sn          NUMBER(15),
+  is_ppis           NUMBER(1) default 0,
+  is_tcm_inject     NUMBER(1) default 0
+);
+-- Add comments to the table 
+comment on table MMIS_DIC_MED_CLIN
+  is '药品临床字典';
+-- Add comments to the columns 
+comment on column MMIS_DIC_MED_CLIN.med_id
+  is '药品ID';
+comment on column MMIS_DIC_MED_CLIN.dose_unit
+  is '剂量单位';
+comment on column MMIS_DIC_MED_CLIN.dose_ratio
+  is '最小单位与剂量单位的换算比，比如最小单位是支，一支是5mg,这里就填入5';
+comment on column MMIS_DIC_MED_CLIN.clin_dosage_unit
+  is '临床用量单位';
+comment on column MMIS_DIC_MED_CLIN.clin_dosage_ratio
+  is '临床用量单位换算比';
+comment on column MMIS_DIC_MED_CLIN.pres_unit
+  is '处方配药单位';
+comment on column MMIS_DIC_MED_CLIN.pres_ratio
+  is '处方配药单位换算比';
+comment on column MMIS_DIC_MED_CLIN.ord_unit
+  is '医嘱配药单位';
+comment on column MMIS_DIC_MED_CLIN.ord_ratio
+  is '医嘱配药单位换算比';
+comment on column MMIS_DIC_MED_CLIN.out_dose_format
+  is '门诊用量中文显示（1：按剂量，2：按用量，3：按用量【分数中文，比如1/4粒】）';
+comment on column MMIS_DIC_MED_CLIN.in_dose_format
+  is '住院用量中文显示（1：按剂量，2：按用量，3：按用量【分数中文，比如1/4粒】）';
+comment on column MMIS_DIC_MED_CLIN.disp_comp
+  is '配药取整方式（0:不取整，1:单次靠上，取整2:总量靠上取整， 3：单次靠下取整，4：总量靠下取整)';
+comment on column MMIS_DIC_MED_CLIN.chn_med_base
+  is '中药开药基数';
+comment on column MMIS_DIC_MED_CLIN.manage_type
+  is '管理类型（S：大输液，B：摆药，Z：针剂）';
+comment on column MMIS_DIC_MED_CLIN.is_fat_soluble
+  is '是否脂溶性药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.is_instil
+  is '是否滴注药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.rang_upper
+  is '滴速范围上限';
+comment on column MMIS_DIC_MED_CLIN.rang_lower
+  is '滴速范围下限';
+comment on column MMIS_DIC_MED_CLIN.can_double_sign
+  is '是否需双签名（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.is_skin_test
+  is '是否皮试药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.st_charge_mode
+  is '皮试药品收费方式（1：皮试阴性，2：皮试阳性，3：原液收费）';
+comment on column MMIS_DIC_MED_CLIN.antib_grade
+  is '抗菌药物级别( 0:非抗菌药物 ,1:非限制, 2:限制, 3:特殊)';
+comment on column MMIS_DIC_MED_CLIN.ddd
+  is 'DDD值';
+comment on column MMIS_DIC_MED_CLIN.antiv_grade
+  is '抗病毒药物级别（0: 非抗病毒，1: 一级，2: 二级，3: 三级）';
+comment on column MMIS_DIC_MED_CLIN.spec_med_class
+  is '特殊药品分类（M：麻醉，J：精神，D：毒性，F：放射性）';
+comment on column MMIS_DIC_MED_CLIN.spec_med_grade
+  is '特殊药品级别（1：一级，2：二级）';
+comment on column MMIS_DIC_MED_CLIN.insure_class
+  is '医保药品分类（1：甲类，2：乙类，3：自费（或丙类））';
+comment on column MMIS_DIC_MED_CLIN.otc
+  is 'OTC（0：处方药，1：甲非处方药，2： 乙非处方药）';
+comment on column MMIS_DIC_MED_CLIN.preg_risk_grade
+  is '妊娠危险性级别 Pregnancy Risk grade :ABCDE';
+comment on column MMIS_DIC_MED_CLIN.eml_class_id
+  is '基本药物分类ID';
+comment on column MMIS_DIC_MED_CLIN.high_alert_grade
+  is '高警示药品  ABC';
+comment on column MMIS_DIC_MED_CLIN.can_confusion
+  is '易混淆药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.can_fall
+  is '易跌倒药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.is_harm
+  is '是否危害药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.is_chronic
+  is '是否慢性病药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.is_contrast
+  is '是否造影剂药品 （0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.is_hormone
+  is '是否激素药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.is_anti_rejection
+  is '是否抗排异药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.is_chemotherapy
+  is '是否化疗药品（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.create_empid
+  is '创建人员';
+comment on column MMIS_DIC_MED_CLIN.create_time
+  is '创建时间';
+comment on column MMIS_DIC_MED_CLIN.modify_empid
+  is '修改人员';
+comment on column MMIS_DIC_MED_CLIN.modify_time
+  is '修改时间';
+comment on column MMIS_DIC_MED_CLIN.state_sn
+  is '状态流水 MMIS_DIC_MED_CLIN_STATE.STATE_SN';
+comment on column MMIS_DIC_MED_CLIN.is_ppis
+  is '是否质子泵抑制剂（0：否，1：是）';
+comment on column MMIS_DIC_MED_CLIN.is_tcm_inject
+  is '是否中成注射剂（0：否，1：是）';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MMIS_DIC_MED_CLIN
+  add constraint PK_MMIS_DIC_MED_CLIN primary key (MED_ID);

@@ -1,0 +1,62 @@
+-- Create table
+create table MMIS_DIC_FORM
+(
+  id           NUMBER(7) not null,
+  branch_code  VARCHAR2(12) not null,
+  form_id_c    NUMBER(4),
+  code         VARCHAR2(12) not null,
+  name         VARCHAR2(32) not null,
+  sname        VARCHAR2(12),
+  dosage_class NUMBER(1) default 0,
+  can_dosage   NUMBER(1) default 0,
+  ord          VARCHAR2(8),
+  inputcode1   VARCHAR2(8),
+  inputcode2   VARCHAR2(8),
+  state        NUMBER(1) default 1 not null,
+  create_empid NUMBER(9) not null,
+  create_time  DATE not null,
+  modify_empid NUMBER(9) not null,
+  modify_time  DATE not null,
+  print_type   NUMBER(1) default 1
+);
+-- Add comments to the table 
+comment on table MMIS_DIC_FORM
+  is '药品剂型字典临时表';
+-- Add comments to the columns 
+comment on column MMIS_DIC_FORM.id
+  is '识别码 (机构ID 3位+4位流水号)';
+comment on column MMIS_DIC_FORM.branch_code
+  is '机构号';
+comment on column MMIS_DIC_FORM.form_id_c
+  is '剂型标准ID 云端';
+comment on column MMIS_DIC_FORM.code
+  is '代码';
+comment on column MMIS_DIC_FORM.name
+  is '名称';
+comment on column MMIS_DIC_FORM.sname
+  is '简称';
+comment on column MMIS_DIC_FORM.dosage_class
+  is '类型（0：针剂，1：片剂，2：其他）';
+comment on column MMIS_DIC_FORM.can_dosage
+  is '是否确定用量（0：否，1：是）';
+comment on column MMIS_DIC_FORM.ord
+  is '排序号';
+comment on column MMIS_DIC_FORM.inputcode1
+  is '辅助码1';
+comment on column MMIS_DIC_FORM.inputcode2
+  is '辅助码2';
+comment on column MMIS_DIC_FORM.state
+  is '记录状态（0：停用，1：在用，2：删除）';
+comment on column MMIS_DIC_FORM.create_empid
+  is '创建人员';
+comment on column MMIS_DIC_FORM.create_time
+  is '创建时间';
+comment on column MMIS_DIC_FORM.modify_empid
+  is '修改人员';
+comment on column MMIS_DIC_FORM.modify_time
+  is '修改时间';
+comment on column MMIS_DIC_FORM.print_type
+  is '卡片打印显示方式（0：剂量，1：用量）';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MMIS_DIC_FORM
+  add constraint PK_MMIS_DIC_FORM primary key (ID);

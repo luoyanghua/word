@@ -110,3 +110,140 @@ DELIMITER ;
 
 
 CALL schema_change ();
+
+/*==============================================================*/
+/* 20178-10-17 
+
+RemoteClinic（远程门诊表）增加字段：OrderNo nvarchar(64)、ServiceTarget SMALLINT
+ExpertShedule（专家门诊排班表）增加字段：ServiceTarget SMALLINT
+
+                                              
+*/
+/*==============================================================*/
+# 订单号（远程门诊表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'RemoteClinic'
+	AND column_name = 'OrderNo'
+) THEN
+	ALTER TABLE RemoteClinic ADD OrderNo VARCHAR (64) ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
+
+# 服务对象（远程门诊表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'RemoteClinic'
+	AND column_name = 'ServiceTarget'
+) THEN
+	ALTER TABLE RemoteClinic ADD ServiceTarget SMALLINT ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
+
+# 服务对象（家门诊排班表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'ExpertShedule'
+	AND column_name = 'ServiceTarget'
+) THEN
+	ALTER TABLE ExpertShedule ADD ServiceTarget SMALLINT ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
+
+/*==============================================================*/
+/* 20178-10-24 
+
+RemoteClinic（远程门诊表）增加字段：PrescriptionState SMALLINT
+
+                                              
+*/
+/*==============================================================*/
+# 处方状态（远程门诊表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'RemoteClinic'
+	AND column_name = 'PrescriptionState'
+) THEN
+	ALTER TABLE RemoteClinic ADD PrescriptionState SMALLINT ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();

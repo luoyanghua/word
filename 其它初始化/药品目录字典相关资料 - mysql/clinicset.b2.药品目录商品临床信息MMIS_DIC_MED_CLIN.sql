@@ -1,0 +1,56 @@
+﻿/*==============================================================*/
+/* Table: MMIS_DIC_MED_CLIN                                     */
+/*==============================================================*/
+create table MMIS_DIC_MED_CLIN
+(
+   med_id               int not null,
+   dose_unit            varchar(8) not null,
+   dose_ratio           decimal(10,4) not null default 1,
+   clin_dosage_unit     varchar(8) not null,
+   clin_dosage_ratio    int not null default 1,
+   pres_unit            varchar(8) not null,
+   pres_ratio           int not null default 1,
+   ord_unit             varchar(8) not null,
+   ord_ratio            int not null default 1,
+   out_dose_format      TINYINT (1) not null,
+   in_dose_format       TINYINT (1) not null,
+   disp_comp            TINYINT (1) not null default 1,
+   chn_med_base         decimal(5,2),
+   manage_type          varchar(1),
+   is_fat_soluble       TINYINT (1) not null default 0,
+   is_instil            TINYINT (1) not null default 0,
+   rang_upper           varchar(16),
+   rang_lower           varchar(16),
+   can_double_sign      TINYINT (1) not null default 0,
+   is_skin_test         TINYINT (1) not null default 0,
+   st_charge_mode       TINYINT (1),
+   antib_grade          TINYINT (1) not null default 0,
+   ddd                  int,
+   antiv_grade          smallint not null default 0,
+   spec_med_class       varchar(1),
+   spec_med_grade       smallint,
+   insure_class         varchar(12),
+   otc                  smallint not null default 0,
+   preg_risk_grade      varchar(1),
+   eml_class_id         int,
+   high_alert_grade     varchar(1),
+   can_confusion        TINYINT (1) not null default 0,
+   can_fall             TINYINT (1) not null default 0,
+   is_harm              TINYINT (1) not null default 0,
+   is_chronic           TINYINT (1) not null default 0,
+   is_contrast          TINYINT (1) not null default 0,
+   is_hormone           TINYINT (1) not null default 0,
+   is_anti_rejection    TINYINT (1) not null default 0,
+   is_chemotherapy      TINYINT (1) not null default 0,
+   create_empid         int not null,
+   create_time          datetime not null,
+   modify_empid         int not null,
+   modify_time          datetime not null,
+   state_sn             bigint,
+   is_ppis              TINYINT (1) default 0,
+   is_tcm_inject        TINYINT (1) default 0,
+   primary key (med_id)
+);
+
+alter table MMIS_DIC_MED_CLIN comment 'dose_ratio：最小单位与剂量单位的换算比，比如最小单位是支，一支是5mg,这里就填入5
+out_do';

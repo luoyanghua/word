@@ -1,0 +1,5 @@
+===2018-10-22===
+增加表：Dim_Doctor（医生维度表）
+Consult_Fact（会诊事实表）增加字段：DoctorKey int  （主键）
+ImageDiag_Fact（远程诊断事实表）增加字段：DoctorKey int  （主键）
+

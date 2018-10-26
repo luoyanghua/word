@@ -162,6 +162,14 @@ namespace eWorld.Services.Common.Install
                 IsSystemRole = true,
                 SystemName = SystemCustomerRoleNames.MedicalStaff,
             };
+            //药剂师
+            var crPharmacists = new CustomerRole
+            {
+                Name = SystemCustomerRoleNames.Pharmacists,
+                Active = true,
+                IsSystemRole = true,
+                SystemName = SystemCustomerRoleNames.Pharmacists,
+            };
             //公众用户
             var crPatient = new CustomerRole
             {
@@ -382,6 +390,7 @@ namespace eWorld.Services.Common.Install
                                     crGuests,
                                     crDoctor,
                                     crMedicalStaff,
+                                    crPharmacists,
                                     crPatient,
                                     crTeacher,
                                     crStudent,

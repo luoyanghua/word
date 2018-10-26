@@ -1,0 +1,66 @@
+-- Create table
+create table  MMIS_DIC_GNAME
+(
+  id           NUMBER(9) not null,
+  code         VARCHAR2(12) not null,
+  name         VARCHAR2(128) not null,
+  ename        VARCHAR2(64),
+  che_name     VARCHAR2(64),
+  phar_id      NUMBER(4),
+  form_id      VARCHAR2(64) not null,
+  spec         VARCHAR2(64) not null,
+  type         VARCHAR2(2) not null,
+  inputcode1   VARCHAR2(8),
+  inputcode2   VARCHAR2(8),
+  remark       VARCHAR2(256),
+  state        NUMBER(1) default 1 not null,
+  create_empid NUMBER(9) not null,
+  create_time  DATE not null,
+  modify_empid NUMBER(9) not null,
+  modify_time  DATE not null
+);
+-- Add comments to the table 
+comment on table MMIS_DIC_GNAME
+  is '药品通用名字典';
+-- Add comments to the columns 
+comment on column MMIS_DIC_GNAME.id
+  is '识别码';
+comment on column MMIS_DIC_GNAME.code
+  is '编码（不唯一）';
+comment on column MMIS_DIC_GNAME.name
+  is '名称';
+comment on column MMIS_DIC_GNAME.ename
+  is '英文名';
+comment on column MMIS_DIC_GNAME.che_name
+  is '化学名';
+comment on column MMIS_DIC_GNAME.phar_id
+  is '药理字典ID';
+comment on column MMIS_DIC_GNAME.form_id
+  is '多种剂型代码，分号分割';
+comment on column MMIS_DIC_GNAME.spec
+  is '规格';
+comment on column MMIS_DIC_GNAME.type
+  is 'Y西药、Z成药、C草药、A试剂、R原材料、M材料类、O其他';
+comment on column MMIS_DIC_GNAME.inputcode1
+  is '辅助码1';
+comment on column MMIS_DIC_GNAME.inputcode2
+  is '辅助码2';
+comment on column MMIS_DIC_GNAME.remark
+  is '备注';
+comment on column MMIS_DIC_GNAME.state
+  is '记录状态(0=停用,1=在用,2=删除)';
+comment on column MMIS_DIC_GNAME.create_empid
+  is '创建人员';
+comment on column MMIS_DIC_GNAME.create_time
+  is '创建时间';
+comment on column MMIS_DIC_GNAME.modify_empid
+  is '修改人员';
+comment on column MMIS_DIC_GNAME.modify_time
+  is '修改时间';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MMIS_DIC_GNAME
+  add constraint PK_MMIS_DIC_GNAME primary key (ID);
+alter table MMIS_DIC_GNAME
+  add constraint MMIS_DIC_GNAME_U_NAME_SPEC unique (NAME, SPEC);
+-- Grant/Revoke object privileges 
+

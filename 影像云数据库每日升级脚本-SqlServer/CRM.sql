@@ -748,5 +748,57 @@ create table Customer_Group_Mapping (
 )
 go
 
+/*==============================================================*/
+/* 2018-09-26
+
+增加表：Developer（开发者表）
+
+*/
+/*==============================================================*/
+------开发者表
+
+
+if not exists (select * from sysobjects where name = 'Developer' and type = 'U')
+create table Developer (
+                Id int identity,
+		CustomerGuid uniqueidentifier,
+		WorkUnit nvarchar (250),
+		BusinessProject nvarchar (250),
+		constraint PK_Developer primary key (Id)
+)
+go
+
+
+
+/*==============================================================*/
+/* 2018-10-12
+
+Customer（用户表）增加字段：IMPeerId int
+
+*/
+/*==============================================================*/
+------ 即时IM PeerId（用户表）
+
+if not exists(select * from syscolumns where id = object_id('Customer') and name = 'IMPeerId') 
+alter table Customer add IMPeerId int
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

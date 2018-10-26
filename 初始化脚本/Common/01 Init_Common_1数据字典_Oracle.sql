@@ -199,7 +199,7 @@ insert into DataDicInfo (  LookUpKey, DicCode, DicName, DicComment, DicExtend) V
 insert into DataDicInfo (  LookUpKey, DicCode, DicName, DicComment, DicExtend) VALUES ( N'AppFunctionMenu', N'InHospitalImage', N'院内影像','1', '1');
 insert into DataDicInfo (  LookUpKey, DicCode, DicName, DicComment, DicExtend) VALUES ( N'AppFunctionMenu', N'SharingApproval', N'分享审批','1', '1');   
 
-insert into DataDicInfo (  LookUpKey, DicCode, DicName, DicComment, DicExtend) VALUES ( N'AppFunctionMenu', N'RemoteAsk', N'在线问诊','1', '2');      
+insert into DataDicInfo (  LookUpKey, DicCode, DicName, DicComment, DicExtend) VALUES ( N'AppFunctionMenu', N'ApplyAsk', N'在线问诊','1', '2');      
 insert into DataDicInfo (  LookUpKey, DicCode, DicName, DicComment, DicExtend) VALUES ( N'AppFunctionMenu', N'NetClinic', N'网络门诊','1', '2');
 
 insert into DataDicInfo (  LookUpKey, DicCode, DicName, DicComment, DicExtend) VALUES ( N'AppFunctionMenu', N'RemoteDiagnosis', N'远程诊断','1', '3');      
@@ -813,6 +813,14 @@ insert into DataDicInfo (  LookUpKey, DicCode, DicName, DicComment, DicExtend) V
 
 
 --  *******************************  开发者开放平台  以上 **************************************
+
+
+
+-- 厦门数据挖掘 用
+INSERT INTO DataDicType (LookUpKey, TypeCode, TypeName) VALUES ( N'HospitalIntranetUrl', N'HospitalIntranetUrl', N'医院的内网地址(如果多个地址用 / 分隔),DicCode为机构编码，DicName为医院内网地址，DicComment为医院名称');
+INSERT INTO DataDicInfo (  LookUpKey, DicCode, DicName, DicComment, DicExtend) VALUES ( N'HospitalIntranetUrl', N'350211A1001', N'172.16.0.5/172.16.0.6/172.16.0.197/172.120.0.9',  N'厦门大学附属第一医院', NULL);
+
+
 
 
 COMMIT;

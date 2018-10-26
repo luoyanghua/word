@@ -83,6 +83,13 @@ namespace eWorld.Services.Common.NopCommerce.Security
 
         #endregion
 
+        #region 药剂师
+
+        //访问药剂师个人中心
+        public static readonly PermissionRecord PharmacistsAccessPanel = new PermissionRecord { Name = "访问药剂师个人中心", SystemName = "PharmacistsAccessPanel", Category = "PublilcHealth" };
+
+        #endregion
+
         #region 公众用户
 
         //访问公众健康患者中心
@@ -362,6 +369,7 @@ namespace eWorld.Services.Common.NopCommerce.Security
                 RemoteMedDoctorAccessPanel,
                 PublilcHealthDoctorAccessPanel,
                 PublilcHealthMedicalStaffAccessPanel,
+                PharmacistsAccessPanel,
                 ImageArchiveAccessPanel,
                 PhoneClientDoctorAccessPanel,
                 CRMDoctorAccessPanel,
@@ -455,6 +463,16 @@ namespace eWorld.Services.Common.NopCommerce.Security
                     {
                         RemoteMedDoctorAccessPanel,
                         PublilcHealthMedicalStaffAccessPanel,
+                        CRMManagerAccessPanel
+                    }
+                },
+                //药剂师权限
+                new DefaultPermissionRecord
+                {
+                    CustomerRoleSystemName = SystemCustomerRoleNames.Pharmacists,
+                    PermissionRecords = new[]
+                    {
+                        PharmacistsAccessPanel,
                         CRMManagerAccessPanel
                     }
                 },

@@ -1,0 +1,31 @@
+prompt Importing table MMIS_DIC_MED_TYPE...
+set feedback off
+set define off
+insert into MMIS_DIC_MED_TYPE (ID, BRANCH_CODE, NAME, TYPE, ACC_ID, FEE_ID, ORD, STATE)
+values (101007, '4717719600', '≤‚ ‘', 'Y', 101001, 101006710, '7', 2);
+
+insert into MMIS_DIC_MED_TYPE (ID, BRANCH_CODE, NAME, TYPE, ACC_ID, FEE_ID, ORD, STATE)
+values (101008, '4717719600', '≤‚ ‘', 'Y', 101001, 101006710, '7', 1);
+
+insert into MMIS_DIC_MED_TYPE (ID, BRANCH_CODE, NAME, TYPE, ACC_ID, FEE_ID, ORD, STATE)
+values (101009, '4717719600', 'Œ˜“©(Õ‚ÀÕ)', 'Y', 101008, 101006710, '8', 1);
+
+insert into MMIS_DIC_MED_TYPE (ID, BRANCH_CODE, NAME, TYPE, ACC_ID, FEE_ID, ORD, STATE)
+values (101001, '4717719600', 'Œ˜“©', 'Y', 101001, 101006710, '1', 1);
+
+insert into MMIS_DIC_MED_TYPE (ID, BRANCH_CODE, NAME, TYPE, ACC_ID, FEE_ID, ORD, STATE)
+values (101002, '4717719600', '≥…“©', 'Z', 101001, 101006712, '2', 1);
+
+insert into MMIS_DIC_MED_TYPE (ID, BRANCH_CODE, NAME, TYPE, ACC_ID, FEE_ID, ORD, STATE)
+values (101003, '4717719600', '≤›“©', 'C', 101003, 101006711, '3', 1);
+
+insert into MMIS_DIC_MED_TYPE (ID, BRANCH_CODE, NAME, TYPE, ACC_ID, FEE_ID, ORD, STATE)
+values (101004, '4717719600', '≤ƒ¡œ', 'M', 101004, null, '4', 1);
+
+insert into MMIS_DIC_MED_TYPE (ID, BRANCH_CODE, NAME, TYPE, ACC_ID, FEE_ID, ORD, STATE)
+values (101005, '4717719600', '“ﬂ√Á', 'Y', 101006, 101006710, '5', 1);
+
+insert into MMIS_DIC_MED_TYPE (ID, BRANCH_CODE, NAME, TYPE, ACC_ID, FEE_ID, ORD, STATE)
+values (101006, '4717719600', '≤›“©(ø≈¡£º¡)', 'C', 101007, 101006711, '6', 1);
+
+prompt Done.

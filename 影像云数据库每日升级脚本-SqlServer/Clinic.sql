@@ -27,3 +27,36 @@ create index IX_RCP_ServiceId on RemoteClinicProcess(
 ServiceId
 )
 go
+
+
+
+
+
+
+
+/*==============================================================*/
+/* 2018-10-09
+
+RemoteClinic（远程门诊表）修改字段：PatientDesc nvarchar(1024)
+                                              
+*/
+/*==============================================================*/
+--------患者主诉（远程门诊表）
+
+
+if exists(select * from syscolumns where id = object_id('RemoteClinic') and name = 'PatientDesc') 
+alter table RemoteClinic alter column PatientDesc nvarchar (1024)
+go
+
+
+
+
+
+
+
+
+
+
+
+
+

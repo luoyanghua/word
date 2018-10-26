@@ -52,6 +52,17 @@ create index IX_HBH_HeartKey on HeartBeatHistory
    HeartKey
 );
 
+
+/*==============================================================*/
+/* Index: IX_HBH_OperateDate                                    */
+/*==============================================================*/
+
+create index IX_HBH_OperateDate on HeartBeatHistory
+(
+   OperateDate desc
+);
+
+
 /*==============================================================*/
 /* Index: IX_HBH_AcqTime                                        */
 /*==============================================================*/
@@ -165,6 +176,14 @@ create index IX_PH_ProcessKey on ProcessHistory
 );
 
 /*==============================================================*/
+/* Index: IX_PH_OperateDate                                      */
+/*==============================================================*/
+create index IX_PH_ProcessKey on ProcessHistory
+(
+   OperateDate
+);
+
+/*==============================================================*/
 /* Index: IX_PH_AcqTime                                         */
 /*==============================================================*/
 create index IX_PH_AcqTime on ProcessHistory
@@ -227,6 +246,16 @@ create index IX_WM_ServerKey on WarnMessage
 (
    ServerKey
 );
+
+/*==============================================================*/
+/* Index: IX_WM_OperateDate                                     */
+/*==============================================================*/
+
+create index IX_WM_OperateDate on WarnMessage
+(
+   OperateDate desc
+);
+
 
 /*==============================================================*/
 /* Index: IX_WM_ProjectKey                                      */

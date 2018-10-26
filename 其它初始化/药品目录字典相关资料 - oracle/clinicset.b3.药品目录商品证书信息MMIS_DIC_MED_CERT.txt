@@ -1,0 +1,98 @@
+-- Create table
+create table MMIS_DIC_MED_CERT
+(
+  med_id                  NUMBER(9) not null,
+  reg_trade_mark          VARCHAR2(64),
+  reg_appr_no             VARCHAR2(64),
+  reg_appr_exp            DATE,
+  gmp_no                  VARCHAR2(64),
+  gmp_cert_date           DATE,
+  gmp_exp                 DATE,
+  purc_exame_rep_no       VARCHAR2(64),
+  purc_exame_rep_batch_no VARCHAR2(64),
+  imp_reg_cert_no         VARCHAR2(64),
+  imp_reg_cert_exp        DATE,
+  imp_qc_no               VARCHAR2(64),
+  imp_qc_exp              DATE,
+  imp_rep_batch_no        VARCHAR2(64),
+  imp_rep_exp             DATE,
+  proxy_exp               DATE,
+  exp_month               NUMBER(3),
+  prod_lic_no             VARCHAR2(64),
+  prod_lic_appr_date      DATE,
+  prod_lic_exp            DATE,
+  biol_prod_cert_no       VARCHAR2(64),
+  biol_prod_cert_batch_no VARCHAR2(64),
+  biol_prod_cert_exp      DATE,
+  reg_cert_no             VARCHAR2(64),
+  reg_cert_exp            DATE,
+  create_empid            NUMBER(9) not null,
+  create_time             DATE not null,
+  modify_empid            NUMBER(9) not null,
+  modify_time             DATE not null
+);
+-- Add comments to the table 
+comment on table MMIS_DIC_MED_CERT
+  is '药品证书字典';
+-- Add comments to the columns 
+comment on column MMIS_DIC_MED_CERT.med_id
+  is '药品ID';
+comment on column MMIS_DIC_MED_CERT.reg_trade_mark
+  is '注册商标';
+comment on column MMIS_DIC_MED_CERT.reg_appr_no
+  is '批准文号';
+comment on column MMIS_DIC_MED_CERT.reg_appr_exp
+  is '批准文号有效日期';
+comment on column MMIS_DIC_MED_CERT.gmp_no
+  is 'GMP编号';
+comment on column MMIS_DIC_MED_CERT.gmp_cert_date
+  is 'GMP认证时间';
+comment on column MMIS_DIC_MED_CERT.gmp_exp
+  is 'GMP到期时间';
+comment on column MMIS_DIC_MED_CERT.purc_exame_rep_no
+  is '首次购入药品检验报告编号';
+comment on column MMIS_DIC_MED_CERT.purc_exame_rep_batch_no
+  is '首次购入药品检验报告批号';
+comment on column MMIS_DIC_MED_CERT.imp_reg_cert_no
+  is '进口药品注册证号';
+comment on column MMIS_DIC_MED_CERT.imp_reg_cert_exp
+  is '进口药品注册证有效日期';
+comment on column MMIS_DIC_MED_CERT.imp_qc_no
+  is '进口药品质检单号';
+comment on column MMIS_DIC_MED_CERT.imp_qc_exp
+  is '进口药品质检单有效日期';
+comment on column MMIS_DIC_MED_CERT.imp_rep_batch_no
+  is '进口药品检验报告书批号';
+comment on column MMIS_DIC_MED_CERT.imp_rep_exp
+  is '进口药品检验报告书有效日期';
+comment on column MMIS_DIC_MED_CERT.proxy_exp
+  is '法人委托书有效日期';
+comment on column MMIS_DIC_MED_CERT.exp_month
+  is '有效期（月）';
+comment on column MMIS_DIC_MED_CERT.prod_lic_no
+  is '生产许可证编号';
+comment on column MMIS_DIC_MED_CERT.prod_lic_appr_date
+  is '生产许可证批准日期';
+comment on column MMIS_DIC_MED_CERT.prod_lic_exp
+  is '生产许可证有效日期';
+comment on column MMIS_DIC_MED_CERT.biol_prod_cert_no
+  is '生物制品批签发合格证编号';
+comment on column MMIS_DIC_MED_CERT.biol_prod_cert_batch_no
+  is '生物制品批签发合格证批号';
+comment on column MMIS_DIC_MED_CERT.biol_prod_cert_exp
+  is '生物制品批签发合格证有效日期';
+comment on column MMIS_DIC_MED_CERT.reg_cert_no
+  is '药品注册证/再注册批件号';
+comment on column MMIS_DIC_MED_CERT.reg_cert_exp
+  is '药品注册证/再注册批件有效日期';
+comment on column MMIS_DIC_MED_CERT.create_empid
+  is '创建人员';
+comment on column MMIS_DIC_MED_CERT.create_time
+  is '创建时间';
+comment on column MMIS_DIC_MED_CERT.modify_empid
+  is '修改人员';
+comment on column MMIS_DIC_MED_CERT.modify_time
+  is '修改时间';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MMIS_DIC_MED_CERT
+  add constraint PK_MMIS_DIC_MED_CERT primary key (MED_ID);

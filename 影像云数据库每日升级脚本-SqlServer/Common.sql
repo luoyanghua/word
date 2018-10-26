@@ -707,3 +707,49 @@ create table ClientAccessAddress (
 go
 
 
+/*==============================================================*/
+/* 2018-10-12
+
+Column（自定义栏目表）增加字段：SourceSystem SMALLINT
+Module（自定义模块表）增加字段：SourceSystem SMALLINT
+SiteInfo（网站自定义信息表）增加字段：OppositeLogoBinary varbinary(max)
+
+*/
+/*==============================================================*/
+-----来源系统（自定义栏目表）
+
+
+
+if not exists(select * from syscolumns where id = object_id('Column') and name = 'SourceSystem') 
+alter table Column add SourceSystem smallint
+go
+
+----- 来源系统（自定义模块表）
+
+if not exists(select * from syscolumns where id = object_id('Module') and name = 'SourceSystem') 
+alter table Module add SourceSystem smallint
+go
+
+
+
+-----网站Logo反白效果图片二进制流（网站自定义信息表）
+
+if not exists(select * from syscolumns where id = object_id('SiteInfo') and name = 'OppositeLogoBinary') 
+alter table SiteInfo add OppositeLogoBinary varbinary(max)
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

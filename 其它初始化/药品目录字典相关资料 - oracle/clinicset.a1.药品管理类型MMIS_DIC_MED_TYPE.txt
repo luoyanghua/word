@@ -1,0 +1,35 @@
+-- Create table
+create table MMIS_DIC_MED_TYPE
+(
+  id          NUMBER(6) not null,
+  branch_code VARCHAR2(12),
+  name        VARCHAR2(32) not null,
+  type        VARCHAR2(2),
+  acc_id      NUMBER(6) not null,
+  fee_id      NUMBER(9),
+  ord         VARCHAR2(8),
+  state       NUMBER(1) default 1 not null
+);
+-- Add comments to the table 
+comment on table MMIS_DIC_MED_TYPE
+  is '药品管理类型';
+-- Add comments to the columns 
+comment on column MMIS_DIC_MED_TYPE.id
+  is '识别号  机构ID 3位+3位流水号';
+comment on column MMIS_DIC_MED_TYPE.branch_code
+  is '机构号';
+comment on column MMIS_DIC_MED_TYPE.name
+  is '名称';
+comment on column MMIS_DIC_MED_TYPE.type
+  is '类型标志（Y：西药，Z：成药，C：草药，A：试剂，R：原材料，M：材料，O：其他）';
+comment on column MMIS_DIC_MED_TYPE.acc_id
+  is '账册ID';
+comment on column MMIS_DIC_MED_TYPE.fee_id
+  is '医疗费用编码';
+comment on column MMIS_DIC_MED_TYPE.ord
+  is '排序号';
+comment on column MMIS_DIC_MED_TYPE.state
+  is '记录状态（0：停用，1：在用，2：删除）';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MMIS_DIC_MED_TYPE
+  add constraint PK_MMIS_DIC_MED_TYPE primary key (ID);

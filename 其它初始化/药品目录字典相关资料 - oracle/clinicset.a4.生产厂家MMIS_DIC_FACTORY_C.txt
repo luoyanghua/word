@@ -1,0 +1,87 @@
+-- Create table
+create table MMIS_DIC_FACTORY_C
+(
+  id           NUMBER(6) not null,
+  code         VARCHAR2(8) not null,
+  name         VARCHAR2(64) not null,
+  sname        VARCHAR2(16) not null,
+  legal_person VARCHAR2(32),
+  contact      VARCHAR2(32),
+  telephone    VARCHAR2(16),
+  address      VARCHAR2(64),
+  zipcode      VARCHAR2(8),
+  email        VARCHAR2(64),
+  ord          VARCHAR2(8) not null,
+  inputcode1   VARCHAR2(8),
+  inputcode2   VARCHAR2(8),
+  remark       VARCHAR2(128),
+  state        NUMBER(1) default 1 not null,
+  create_empid NUMBER(9) not null,
+  create_time  DATE not null,
+  modify_empid NUMBER(9) not null,
+  modify_time  DATE not null,
+  appr_state   NUMBER(4),
+  submit_empid NUMBER(9),
+  submit_time  DATE,
+  appr_empid   NUMBER(9),
+  appr_time    DATE,
+  branch_code  VARCHAR2(12)
+);
+-- Add comments to the table 
+comment on table MMIS_DIC_FACTORY_C
+  is '生产厂家';
+-- Add comments to the columns 
+comment on column MMIS_DIC_FACTORY_C.id
+  is '识别号';
+comment on column MMIS_DIC_FACTORY_C.code
+  is '代码';
+comment on column MMIS_DIC_FACTORY_C.name
+  is '名称';
+comment on column MMIS_DIC_FACTORY_C.sname
+  is '简称';
+comment on column MMIS_DIC_FACTORY_C.legal_person
+  is '法人';
+comment on column MMIS_DIC_FACTORY_C.contact
+  is '联系人';
+comment on column MMIS_DIC_FACTORY_C.telephone
+  is '联系电话';
+comment on column MMIS_DIC_FACTORY_C.address
+  is '联系地址';
+comment on column MMIS_DIC_FACTORY_C.zipcode
+  is '邮编';
+comment on column MMIS_DIC_FACTORY_C.email
+  is '电子邮件';
+comment on column MMIS_DIC_FACTORY_C.ord
+  is '排序';
+comment on column MMIS_DIC_FACTORY_C.inputcode1
+  is '辅助码1';
+comment on column MMIS_DIC_FACTORY_C.inputcode2
+  is '辅助码2';
+comment on column MMIS_DIC_FACTORY_C.remark
+  is '备注';
+comment on column MMIS_DIC_FACTORY_C.state
+  is '状态(0：停用，1：在用，2：删除)';
+comment on column MMIS_DIC_FACTORY_C.create_empid
+  is '创建人员';
+comment on column MMIS_DIC_FACTORY_C.create_time
+  is '创建时间';
+comment on column MMIS_DIC_FACTORY_C.modify_empid
+  is '修改人员';
+comment on column MMIS_DIC_FACTORY_C.modify_time
+  is '修改时间';
+comment on column MMIS_DIC_FACTORY_C.appr_state
+  is '审批状态（0：初始，10：提交审批，20：审批退回，30：审批通过，40：申请库提交，50：受理库退回，60：开始执行，99：结束执行）';
+comment on column MMIS_DIC_FACTORY_C.submit_empid
+  is '提交审批人';
+comment on column MMIS_DIC_FACTORY_C.submit_time
+  is '提交审批时间';
+comment on column MMIS_DIC_FACTORY_C.appr_empid
+  is '审批人';
+comment on column MMIS_DIC_FACTORY_C.appr_time
+  is '审批时间';
+comment on column MMIS_DIC_FACTORY_C.branch_code
+  is '机构编号';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MMIS_DIC_FACTORY_C
+  add constraint PK_MMIS_DIC_FACTORY_C primary key (ID);
+

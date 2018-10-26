@@ -1,0 +1,78 @@
+-- Create table
+create table OIS_PRES_DETAIL
+(
+  pres_id          NUMBER(15) not null,
+  seq              NUMBER(2) not null,
+  opc_id           NUMBER(15) not null,
+  clinic_id        NUMBER(15) not null,
+  sto_id           NUMBER(7) not null,
+  group_no         NUMBER(1) default 1,
+  times            NUMBER(3),
+  med_id           NUMBER(9) not null,
+  dosage           NUMBER(10,4),
+  dose             NUMBER(10,4),
+  usage            NUMBER(8),
+  drug_way         NUMBER(8),
+  remark           VARCHAR2(128),
+  quantity         NUMBER(10,4),
+  skin_test        CHAR(1),
+  med_ins_mark     NUMBER(1) default 0 not null,
+  detail_dose_flag NUMBER(1) default 0,
+  emp_id           NUMBER(9),
+  byo              NUMBER(1) default 0,
+  med_name         VARCHAR2(128),
+  returntimes      NUMBER(2),
+  returnquantity   NUMBER(10,4),
+  minquantity      NUMBER(10,4)
+);
+-- Add comments to the table 
+comment on table OIS_PRES_DETAIL
+  is '门诊医生处方明细';
+-- Add comments to the columns 
+comment on column OIS_PRES_DETAIL.pres_id
+  is '处方内码';
+comment on column OIS_PRES_DETAIL.seq
+  is '明细序号';
+comment on column OIS_PRES_DETAIL.opc_id
+  is '门诊号';
+comment on column OIS_PRES_DETAIL.clinic_id
+  is '就诊号';
+comment on column OIS_PRES_DETAIL.sto_id
+  is '仓库';
+comment on column OIS_PRES_DETAIL.group_no
+  is '组号';
+comment on column OIS_PRES_DETAIL.times
+  is '总次数';
+comment on column OIS_PRES_DETAIL.med_id
+  is '药品编号(品规药品编号)';
+comment on column OIS_PRES_DETAIL.dosage
+  is '每次用量';
+comment on column OIS_PRES_DETAIL.dose
+  is '每次剂量';
+comment on column OIS_PRES_DETAIL.usage
+  is '用法';
+comment on column OIS_PRES_DETAIL.drug_way
+  is '给药方式';
+comment on column OIS_PRES_DETAIL.remark
+  is '服法';
+comment on column OIS_PRES_DETAIL.quantity
+  is '配药数量';
+comment on column OIS_PRES_DETAIL.skin_test
+  is '皮试结果(+/-/W/M/T 阳/阴/未/免/脱敏）';
+comment on column OIS_PRES_DETAIL.med_ins_mark
+  is '医保自负标志';
+comment on column OIS_PRES_DETAIL.detail_dose_flag
+  is '明细剂量标志';
+comment on column OIS_PRES_DETAIL.emp_id
+  is '医生编号';
+comment on column OIS_PRES_DETAIL.byo
+  is '自备标志(0:非自备/1:自备)';
+comment on column OIS_PRES_DETAIL.returntimes
+  is '退药总次数';
+comment on column OIS_PRES_DETAIL.returnquantity
+  is '退药总数量';
+comment on column OIS_PRES_DETAIL.minquantity
+  is '最小单位配药数量';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table OIS_PRES_DETAIL
+  add constraint PK_OIS_PRES_DETAIL primary key (PRES_ID, SEQ);

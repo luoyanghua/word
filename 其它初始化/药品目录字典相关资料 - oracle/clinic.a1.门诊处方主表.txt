@@ -1,0 +1,80 @@
+-- Create table
+create table OIS_PRESCRIPTION
+(
+  pres_id        NUMBER(15) not null,
+  serial_number  NUMBER(15) not null,
+  opc_id         NUMBER(15) not null,
+  clinic_id      NUMBER(15) not null,
+  type           NUMBER(1) not null,
+  category       NUMBER(4),
+  bm_day         NUMBER(2),
+  demand         VARCHAR2(128),
+  out_no         NUMBER(2),
+  emp_id         NUMBER(9),
+  create_time    DATE,
+  biz_no         NUMBER(15),
+  diags          VARCHAR2(256),
+  source_type    NUMBER(2),
+  branch_code    VARCHAR2(10),
+  bill_id        NUMBER(15),
+  state          NUMBER(1),
+  biz_type       NUMBER(2),
+  overview       VARCHAR2(2000),
+  center_pres_id VARCHAR2(20),
+  obs_check_time DATE,
+  obs_check_emp  NUMBER(9)
+);
+-- Add comments to the table 
+comment on table OIS_PRESCRIPTION
+  is '门诊医生处方';
+-- Add comments to the columns 
+comment on column OIS_PRESCRIPTION.pres_id
+  is '医生处方编号';
+comment on column OIS_PRESCRIPTION.serial_number
+  is '流水号';
+comment on column OIS_PRESCRIPTION.opc_id
+  is '门诊号';
+comment on column OIS_PRESCRIPTION.clinic_id
+  is '就诊号';
+comment on column OIS_PRESCRIPTION.type
+  is '类型(1:西药,2:成药,3:中药,4:免煎中药)';
+comment on column OIS_PRESCRIPTION.category
+  is '处方分类';
+comment on column OIS_PRESCRIPTION.bm_day
+  is '煎药天数';
+comment on column OIS_PRESCRIPTION.demand
+  is '处方要求';
+comment on column OIS_PRESCRIPTION.out_no
+  is '外配处方序号';
+comment on column OIS_PRESCRIPTION.emp_id
+  is '医生编号';
+comment on column OIS_PRESCRIPTION.create_time
+  is '开处方的时间';
+comment on column OIS_PRESCRIPTION.biz_no
+  is '申请单号';
+comment on column OIS_PRESCRIPTION.diags
+  is '诊断';
+comment on column OIS_PRESCRIPTION.source_type
+  is '来源';
+comment on column OIS_PRESCRIPTION.branch_code
+  is '医疗机构';
+comment on column OIS_PRESCRIPTION.bill_id
+  is '账单号(年月日6+机构ID3+流水号6)';
+comment on column OIS_PRESCRIPTION.state
+  is '1：未收费；2：已收费；3：作废';
+comment on column OIS_PRESCRIPTION.biz_type
+  is '关联业务流类型(1=输液流/2=摆药流/3=中药流/4=皮试流/5=化验流/6=检查流/7=病理流/8=手术流/9=麻醉流/10=用血流/11=治疗流/99=其它)';
+comment on column OIS_PRESCRIPTION.overview
+  is '处方内容概况';
+comment on column OIS_PRESCRIPTION.center_pres_id
+  is '云中医中心处方编号';
+comment on column OIS_PRESCRIPTION.obs_check_time
+  is '留观复核时间';
+comment on column OIS_PRESCRIPTION.obs_check_emp
+  is '留观复核人员ID';
+-- Create/Recreate indexes 
+create index IDX_BILL_ID on OIS_PRESCRIPTION (BILL_ID);
+create index IDX_CLINIC_ID on OIS_PRESCRIPTION (OPC_ID, CLINIC_ID);
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table OIS_PRESCRIPTION
+  add constraint PK_PDW_PRESCRIPTION primary key (PRES_ID);

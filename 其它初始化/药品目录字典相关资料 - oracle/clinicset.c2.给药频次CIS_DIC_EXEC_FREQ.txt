@@ -1,0 +1,62 @@
+-- Create table
+create table CIS_DIC_EXEC_FREQ
+(
+  id             NUMBER(8) not null,
+  branch_code    VARCHAR2(10) not null,
+  code           VARCHAR2(8),
+  name           VARCHAR2(32),
+  days           NUMBER(2),
+  times          NUMBER(2),
+  long_term_used NUMBER(1) not null,
+  temp_used      NUMBER(1) not null,
+  out_med_used   NUMBER(1) not null,
+  is_spare       NUMBER(1) not null,
+  is_continuous  NUMBER(1) not null,
+  state          NUMBER(1) default 1 not null,
+  ord            VARCHAR2(8),
+  modify_empid   NUMBER(9),
+  modify_time    DATE default SYSDATE,
+  remark         VARCHAR2(128),
+  freq_id_c      NUMBER(8)
+);
+-- Add comments to the table 
+comment on table CIS_DIC_EXEC_FREQ
+  is '执行频次字典';
+-- Add comments to the columns 
+comment on column CIS_DIC_EXEC_FREQ.id
+  is 'ID';
+comment on column CIS_DIC_EXEC_FREQ.branch_code
+  is '医疗分支机构代码';
+comment on column CIS_DIC_EXEC_FREQ.code
+  is '频次代码';
+comment on column CIS_DIC_EXEC_FREQ.name
+  is '频次名称';
+comment on column CIS_DIC_EXEC_FREQ.days
+  is '天数';
+comment on column CIS_DIC_EXEC_FREQ.times
+  is '次数';
+comment on column CIS_DIC_EXEC_FREQ.long_term_used
+  is '长期医嘱使用（0=否/1=是）';
+comment on column CIS_DIC_EXEC_FREQ.temp_used
+  is '临时医嘱使用（0=否/1=是）';
+comment on column CIS_DIC_EXEC_FREQ.out_med_used
+  is '出院带药使用（0=否/1=是）';
+comment on column CIS_DIC_EXEC_FREQ.is_spare
+  is '是否备用（0=否/1=是）';
+comment on column CIS_DIC_EXEC_FREQ.is_continuous
+  is '是否持续，如护理等级等使用（0=否/1=是）';
+comment on column CIS_DIC_EXEC_FREQ.state
+  is '记录状态(0=停用,1=在用,2=删除)';
+comment on column CIS_DIC_EXEC_FREQ.ord
+  is '排序码';
+comment on column CIS_DIC_EXEC_FREQ.modify_empid
+  is '修改人员';
+comment on column CIS_DIC_EXEC_FREQ.modify_time
+  is '修改时间';
+comment on column CIS_DIC_EXEC_FREQ.remark
+  is '备注';
+comment on column CIS_DIC_EXEC_FREQ.freq_id_c
+  is '云端ID CIS_DIC_EXEC_FREQ_C.ID';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table CIS_DIC_EXEC_FREQ
+  add constraint PK_CIS_DIC_EXEC_FREQ primary key (ID);

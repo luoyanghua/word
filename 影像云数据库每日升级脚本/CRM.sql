@@ -5633,3 +5633,241 @@ DELIMITER ;
 
 
 CALL schema_change ();
+
+/*==============================================================*/
+/* 2018-10-19
+
+MemberDoctorService（合作医院和医生之间协议开通服务表）增加字段：Initiator SMALLINT
+
+*/
+/*==============================================================*/
+# 开通服务发起方（合作医院和医生之间协议开通服务表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'MemberDoctorService'
+	AND column_name = 'Initiator'
+) THEN
+	ALTER TABLE MemberDoctorService ADD Initiator SMALLINT ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
+
+/*==============================================================*/
+/* 2018-10-22
+
+DoctorTotal（医生汇总表）增加字段：NetClinicCnt INT、NetClinicGrade FLOAT、NetClinicReplyMinutes INT、DiagnosisOverTimes INT
+
+*/
+/*==============================================================*/
+# 网络门诊人数（医生汇总表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'DoctorTotal'
+	AND column_name = 'NetClinicCnt'
+) THEN
+	ALTER TABLE DoctorTotal ADD NetClinicCnt INT ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
+
+# 网络门诊评分（平均）（医生汇总表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'DoctorTotal'
+	AND column_name = 'NetClinicGrade'
+) THEN
+	ALTER TABLE DoctorTotal ADD NetClinicGrade FLOAT ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
+
+# 网络门诊回复速度（平均 - 分钟）（医生汇总表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'DoctorTotal'
+	AND column_name = 'NetClinicReplyMinutes'
+) THEN
+	ALTER TABLE DoctorTotal ADD NetClinicReplyMinutes INT ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
+
+# 远程诊断超时数医（医生汇总表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'DoctorTotal'
+	AND column_name = 'DiagnosisOverTimes'
+) THEN
+	ALTER TABLE DoctorTotal ADD DiagnosisOverTimes INT ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
+
+/*==============================================================*/
+/* 2018-10-23
+
+MDTGroup（MDT专家组表）增加字段：Speciality nvarchar(250)
+
+*/
+/*==============================================================*/
+# 专家组擅长（MDT专家组表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'MDTGroup'
+	AND column_name = 'Speciality'
+) THEN
+	ALTER TABLE MDTGroup ADD Speciality VARCHAR (250) ;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
+
+/*==============================================================*/
+/* 2018-10-24
+
+CustomerCircleRequest（朋友圈申请表）增加字段：GroupId INT
+
+*/
+/*==============================================================*/
+# 分组Id（朋友圈申请表）
+DROP PROCEDURE
+IF EXISTS schema_change;  
+DELIMITER //
+
+
+CREATE PROCEDURE schema_change ()
+BEGIN
+
+DECLARE CurrentDatabase VARCHAR (100) ; SELECT
+	DATABASE () INTO CurrentDatabase ;
+IF NOT EXISTS (
+	SELECT
+		*
+	FROM
+		information_schema. COLUMNS
+	WHERE
+		table_schema = CurrentDatabase
+	AND table_name = 'CustomerCircleRequest'
+	AND column_name = 'GroupId'
+) THEN
+	ALTER TABLE CustomerCircleRequest ADD GroupId INT;
+END
+IF ;
+END//  
+DELIMITER ;
+
+
+CALL schema_change ();
