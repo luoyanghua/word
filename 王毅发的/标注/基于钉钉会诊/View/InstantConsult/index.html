@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>即时会诊</title>
+    <link rel="stylesheet" href="../../Content/InstantConsultFonts/iconfont.css">
+    <link rel="stylesheet" href="../../Content/productStyle/blue/InstantConsult/common.css">
+    <link rel="stylesheet" href="../../Content/productStyle/blue/InstantConsult/index.css">
+    <script src="../../Script/Vue/vue.2.5.13.js"></script>
+</head>
+<body>
+    <div id="app" class="app">
+        <div class="page_title">
+            <i class="iconfont icon-xiangzuojiantou page_back"></i>
+            <span>即时会诊</span>
+        </div>
+        <ul class="search_ul">
+            <li class="search_li">
+                <div class="search_text">会诊时间<i class="iconfont icon-jiantou"></i></div>
+            </li>
+            <li class="search_li">
+                <div class="search_text"
+                    v-on:click="searchItemShow = 1">会诊医生<i class="iconfont icon-zhankai"></i></div>
+                <div class="search_pop" v-bind:class="{active: searchItemShow == 1}">
+                    <ul class="serarch_item ">
+                        <li class="active"><i class="iconfont icon-duigou1 "></i>全部</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                        <li><i class="iconfont icon-duigou1"></i>王专家</li>
+                    </ul>
+                    <div class="search_btn">
+                        <button v-on:click="searchItemShow = 0">重置</button>
+                        <button>确定</button>
+                    </div>
+                </div>
+            </li>
+            <li class="search_li">
+                <div class="search_text"
+                     v-on:click="searchItemShow = 2">会诊状态<i class="iconfont icon-zhankai"></i></div>
+                <div class="search_pop " v-bind:class="{active: searchItemShow == 2}">
+                        <ul class="serarch_item ">
+                            <li class="active"><i class="iconfont icon-duigou1 "></i>全部</li>
+                            <li><i class="iconfont icon-duigou1"></i>已申请</li>
+                            <li><i class="iconfont icon-duigou1"></i>会诊中</li>
+                            <li><i class="iconfont icon-duigou1"></i>已会诊</li>
+                        </ul>
+                        <div class="search_btn">
+                            <button v-on:click="searchItemShow = 0">重置</button>
+                            <button>确定</button>
+                        </div>
+                    </div>
+            </li>
+        </ul>
+        <ul class="tolk_list">
+            <li>
+                <div class="tolk_img"><img src="" alt="头像"></div>
+                <div class="tolk_info">
+                    <h4 class="tolk_name">夏老师</h4>
+                    <p class="tolk_purpose">咳嗽一月</p>
+                    <p class="tolk_time">2018-09-09 16:33</p>
+                </div>
+                <div class="tolk_state">已申请</div>
+            </li>
+        </ul>
+        <ul class="tolk_btn">
+            <li><i class="iconfont icon-yishengliebiao"></i>医生列表</li>
+            <li><i class="iconfont icon-jishihuizhen"></i>即时会诊</li>
+        </ul>
+    </div>
+    <script src="../../Script/InstantConsult/index.js"></script>
+</body>
+</html>

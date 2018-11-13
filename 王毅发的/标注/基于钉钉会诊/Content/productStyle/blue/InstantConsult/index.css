@@ -1,0 +1,34 @@
+.app{display: flex;flex-direction: column;height: 100vh;overflow: hidden;}
+.page_title{flex:0 0 40px;}
+
+.search_ul{flex:0 0 40px;display: flex;position: relative;height: 40px;border-top:1px solid #eee;border-bottom: 1px solid #eee;line-height: 38px;}
+.search_li{flex: 1;text-align: center;}
+.search_text{position: relative;font-size: 13px;color:#666;height: 100%;}
+.search_text > .iconfont{margin-left: 6px;}
+.search_text:after{position: absolute;right:0;top:11px;content:'';height: 16px;width: 1px;background: #eee;}
+.search_ul > .search_li:last-child .search_text:after{display: none;}
+
+.search_pop.active{display: flex;}
+.search_pop{display: none;flex-direction: column;position: absolute;left:0;top:40px;width: 100%;background: rgba(24,24,24,0.5);width: 100vw;height: calc(100vh - 84px);}
+.serarch_item{background: #fff;overflow-y: auto;}
+.serarch_item li{height: 45px;border-bottom: 1px solid #eee;line-height: 45px;padding:0 15px;text-align: left;font-size: 13px;}
+.serarch_item li .iconfont{margin-right: 15px;color:#1c8be4;visibility: hidden;}
+.serarch_item li.active{color:#1c8be4;}
+.serarch_item li.active .iconfont{visibility:visible;}
+.search_btn{flex: 0 0 75px;line-height: 75px;background: #fff;}
+.search_btn button{height: 45px;line-height: 45px;width: 145px;background: #1c8be4;color: #fff;border:1px solid#1c8be4;border-radius:4px;font-size: 15px;}
+.search_btn button:first-child{margin-right: 25px;background: #fff;color:#1c8be4;}
+
+.tolk_list{flex: 1;overflow-y: auto;}
+.tolk_list > li{display: flex;padding:10px 15px;border-bottom: 1px solid #eee;}
+.tolk_img{flex: 0 0 34px;height: 100%;}
+.tolk_info{flex: 1;padding:0 10px;}
+.tolk_state{flex: 0 0 50px;font-size: 13px;}
+.tolk_name{font-weight: normal;margin-bottom: 10px;font-size: 15px;height: 15px;}
+.tolk_purpose{margin-bottom: 10px;font-size: 13px;color:#666;white-space: nowrap;text-overflow: ellipsis;height: 13px;}
+.tolk_time{font-size: 12px;color:#999;height: 12px;}
+
+.tolk_btn{display:flex;flex: 0 0 48px;line-height: 48px;background: #1c8be4;}
+.tolk_btn > li{flex: 1;text-align: center;color: #fff;font-size: 15px;}
+.tolk_btn > li:first-child{border-right: 1px solid #1578c7;}
+.tolk_btn > li .iconfont{margin-right: 10px;}
