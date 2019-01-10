@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Servers>
+    <Server>
+      <Key>78e8705a525f1668</Key>
+      <Host>192.168.1.200</Host>
+      <Port>3306</Port>
+      <UserName>sa</UserName>
+      <PassWord>D486B7A559B42979</PassWord>
+      <DbGroups>
+        <DbGroup Name="远程监控系统" Code="1009">
+          <ConnectionStrings>
+            <ConnectionString Name="Monitor">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C931D2E4923718B52DADB4EA88717D7B6E347D69831402CC7F204733F8EB6EF374E</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+        <DbGroup Name="数据挖掘系统" Code="1008">
+          <ConnectionStrings>
+            <ConnectionString Name="DataMining">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C93BAEC339708A895327D88F604FDFF39701923E70EF9B7F6495795A62E53D83DCCE4596512F9FF957D</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+        <DbGroup Name="公众健康服务" Code="1007">
+          <ConnectionStrings>
+            <ConnectionString Name="PublicHealth">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C93D2C1CFEE7A81488474BE98B43B10B89307CC4E09FD6EE4075E04D10D0EE7B9A52052CBF37D8AA773</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+        <DbGroup Name="影像云归档" Code="1006">
+          <ConnectionStrings>
+            <ConnectionString Name="ImageArchive">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C93D98B4D99C7B6E247AF3E65AFEB26129CED472ADAA1F8460A14E699DB9947F41A399A0862E4F6E2BD</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+        <DbGroup Name="影像云质控" Code="1005">
+          <ConnectionStrings>
+            <ConnectionString Name="Quality">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C93CCC7CF3DFE3232E13E2E78EEB5DE5D531AC06B812D097302F5168AE48E53CDB3</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+        <DbGroup Name="远程医学教育" Code="1004">
+          <ConnectionStrings>
+            <ConnectionString Name="Teach">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C932E3C40E686CFE438ED67C266011F9CE589E6C41F7C417AADE23DD68467BCE978</ConnectionString>
+            <ConnectionString Name="Resource">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C9390FA4B78AAAE4E9F9050CC59EC9FFEA8E474E30329B98D17AC166DC3F380ECE2</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+        <DbGroup Name="客户关系管理" Code="1002">
+          <ConnectionStrings>
+            <ConnectionString Name="CRM">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C9389BC1FBF1C71B43984654BCC526A706F09BB0D16D568C55EF84C1A6C91D4737D</ConnectionString>
+            <ConnectionString Name="Payment">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C93E6CB52C1B7368BA8C5901666BE74B88D9175A814E3E1DF726E339E420A9BD365</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+        <DbGroup Name="公共服务" Code="1001">
+          <ConnectionStrings>
+            <ConnectionString Name="Common">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C931C7AC7C325476EF20ECEF3D5EE6D848B5108BAF188C1965BD879FCED2CB432BF</ConnectionString>
+            <ConnectionString Name="Media">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C93FE14EE908452F3485C9C40ABA8407BA3AE8A855A674077F1DC4F55A06E9A81F4</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+        <DbGroup Name="远程医疗协同" Code="1003">
+          <ConnectionStrings>
+            <ConnectionString Name="Consult">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C9321779773C7E2B9384587E2E38F1AC70D3244A40E02241308EA0D6CC00306F97F</ConnectionString>
+            <ConnectionString Name="Diagnosis">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C938CCF65F056EC058A3BCEA3B515314BAAA17B75FBE08C31DCDF3690DD2D7EB1AE72ACBD8F14E7AC2C</ConnectionString>
+            <ConnectionString Name="Clinic">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C93586CC9CFEF9FBB637C091B4CD52CF234E6FDEBBD9ADDA3E547E340DB2EAED8C9</ConnectionString>
+            <ConnectionString Name="FollowUp">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C938D91D2D19FA937AF1A6A2A00D3DA12B04CA2E47B0E79BFCBEBAEC190D923A8E2</ConnectionString>
+            <ConnectionString Name="Referral">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C9302A725C720E1928762842ADC28BE61FBE3B55CA5C99D0A3F2F701ADBD8789A76</ConnectionString>
+            <ConnectionString Name="MDT">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C9320E35ABE06BD08F5CF05A0B74530C3CF46909743F3797AD511DFBC6B9A5D01AE</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+        <DbGroup Name="区域医技预约" Code="1010">
+          <ConnectionStrings>
+            <ConnectionString Name="Reserve">65BD31343A0BDCC0A4ACBEAC2762B3E03F8A619908C8D12EAF47126EC7FFD8489AC925419DEC7C937FD7DB7BEE922D16E9ADF397024F8BF222FAA77EC57F3F7A5E08F14A3488A175</ConnectionString>
+          </ConnectionStrings>
+        </DbGroup>
+      </DbGroups>
+    </Server>
+  </Servers>
+  <WCFGroups>
+    <WCFGroup Name="公共服务">
+      <ConnectionSettings>
+        <ConnectionSetting Name="CommonService">AE4CD279BEC6535B333153327580ED7C4CACC3A3384A069D44B8DE989C08E38769ECA53E89441F4FE126B2038062DBE5C49C0F2B5F40C1DD</ConnectionSetting>
+        <ConnectionSetting Name="MediaService">AE4CD279BEC6535B333153327580ED7C4CACC3A3384A069D44B8DE989C08E3876AF0B45E0328A156158F5811A86824DBC559178C09A0D940</ConnectionSetting>
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="客户关系服务">
+      <ConnectionSettings>
+        <ConnectionSetting Name="CRMService">AE4CD279BEC6535B333153327580ED7CEF52E9B9F36904603CD365BE64C1951D7C14E81ED3AFEDEEECD71EB76176F0AE2D4904BE7E86BF23</ConnectionSetting>
+        <ConnectionSetting Name="PaymentService">AE4CD279BEC6535B333153327580ED7CEF52E9B9F36904603CD365BE64C1951DBC3FD3D36BED30F3D6916A7A4E19DAF64F0E47C5884560B4</ConnectionSetting>
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="运营管理">
+      <ConnectionSettings>
+        <ConnectionSetting Name="OperateService" />
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="机构管理">
+      <ConnectionSettings>
+        <ConnectionSetting Name="InstitutionService" />
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="远程医疗协同">
+      <ConnectionSettings>
+        <ConnectionSetting Name="ConsultService" />
+        <ConnectionSetting Name="DiagnosisService" />
+        <ConnectionSetting Name="ClinicService" />
+        <ConnectionSetting Name="FollowUpService" />
+        <ConnectionSetting Name="ReferralService" />
+        <ConnectionSetting Name="MDTService" />
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="远程医学教育">
+      <ConnectionSettings>
+        <ConnectionSetting Name="TeachService" />
+        <ConnectionSetting Name="ResourceService" />
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="影像云质控">
+      <ConnectionSettings>
+        <ConnectionSetting Name="QualityService" />
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="影像云存储共享">
+      <ConnectionSettings>
+        <ConnectionSetting Name="ImageArchiveService">AE4CD279BEC6535B333153327580ED7C23B64DEF27172BFD49F902D3FA8779024018D448547D2431007829223C2A91EBBCE4E5D2C512614AAA23B468836F28E7</ConnectionSetting>
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="公众健康">
+      <ConnectionSettings>
+        <ConnectionSetting Name="PublicHealthService" />
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="数据挖掘">
+      <ConnectionSettings>
+        <ConnectionSetting Name="DataMiningService" />
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="在线监控">
+      <ConnectionSettings>
+        <ConnectionSetting Name="MonitorService" />
+      </ConnectionSettings>
+    </WCFGroup>
+    <WCFGroup Name="检查转检预约">
+      <ConnectionSettings>
+        <ConnectionSetting Name="ReserveService" />
+      </ConnectionSettings>
+    </WCFGroup>
+  </WCFGroups>
+  <PublicServiceSetting>
+    <AuthorizationWebApiUrl>AE4CD279BEC6535B333153327580ED7C429D6ACB5872F21D30BD964C8412ECF2</AuthorizationWebApiUrl>
+  </PublicServiceSetting>
+  <RedisSetting>
+    <Host>61A2B3429B8AE6377F2809E13D54A36A</Host>
+    <Port>CA76BA73B6209ADD</Port>
+    <PassWord>D486B7A559B42979</PassWord>
+  </RedisSetting>
+</Config>
