@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01WebService", "01WebService\01WebService.csproj", "{6EA898F2-B958-407C-9B67-BA67B08D58BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YtWebService", "YtWebService\YtWebService.csproj", "{A3668345-28C7-44BA-ADAE-CB90707D302B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02ProgramClient", "02ProgramClient\02ProgramClient.csproj", "{98E291D8-4A12-4284-9A81-CDF005D8AF90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EA898F2-B958-407C-9B67-BA67B08D58BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA898F2-B958-407C-9B67-BA67B08D58BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA898F2-B958-407C-9B67-BA67B08D58BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA898F2-B958-407C-9B67-BA67B08D58BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3668345-28C7-44BA-ADAE-CB90707D302B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3668345-28C7-44BA-ADAE-CB90707D302B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3668345-28C7-44BA-ADAE-CB90707D302B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3668345-28C7-44BA-ADAE-CB90707D302B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98E291D8-4A12-4284-9A81-CDF005D8AF90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E291D8-4A12-4284-9A81-CDF005D8AF90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E291D8-4A12-4284-9A81-CDF005D8AF90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E291D8-4A12-4284-9A81-CDF005D8AF90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
